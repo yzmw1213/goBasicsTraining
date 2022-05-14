@@ -4,11 +4,12 @@ import "fmt"
 
 func intSeq() func() int {
 	fmt.Println("intSeq initialize")
-	i:= 0
-	return func() int {
+	i := 0
+	var addFunc = func() int {
 		i++
 		return i
 	}
+	return addFunc
 }
 func main() {
 	nextInt := intSeq()
@@ -16,6 +17,6 @@ func main() {
 	fmt.Println(nextInt())
 	fmt.Println(nextInt())
 
-	newInt :=intSeq()
+	newInt := intSeq()
 	fmt.Println(newInt())
 }
