@@ -26,7 +26,10 @@ func (p People) Len() int {
 }
 
 func (p People) Less(i, j int) bool {
-	return p[i].Name < p[j].Name
+	// Age 昇順でソートされる
+	//return p[i].Age < p[j].Age
+	// Age 降順でソートされる
+	return p[i].Age > p[j].Age
 }
 
 func (p People) Swap(i, j int) {
@@ -41,6 +44,7 @@ func sortPeople() {
 		{"Tom", 16},
 		{"Chris", 20},
 		{"Jhon", 37},
+		{"Bush", 1},
 	}
 	fmt.Println(people)
 	sort.Sort(people)
