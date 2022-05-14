@@ -23,8 +23,9 @@ func main() {
 	copy(c, s)
 	fmt.Printf("c after copy %v\n", c)
 
-	// sliceの切り出し
-	// インデックス1 ~ 4の範囲 を切り取る
+	// sliceの要素を、範囲指定して取り出す
+	// s[start:end] => 実際に取り出される要素の終了位置は、end-1となる
+	// インデックス2,3,4の範囲 を切り取る
 	l := s[2:5]
 	fmt.Printf("l %v\n", l)
 
