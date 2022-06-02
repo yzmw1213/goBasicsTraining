@@ -91,5 +91,21 @@ func main() {
 	// かな文字の変換は、unicode.SpecialCaseを利用する
 	p("ToLower", strings.ToLower("ABCDE"))
 
+	p("reverseString", reverseString("abcdefg"))
+
 	// Trim
+}
+
+// reverseString 与えられた文字列を反転する
+func reverseString(s string) string {
+	// runes sを構成する各文字のUnicodeの符号点スライス
+	runes := []rune(s)
+
+	fmt.Println("runes ", runes)
+
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+
+	return string(runes)
 }
